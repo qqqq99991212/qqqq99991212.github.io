@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />  
+    <title>简单计算</title>
+    
+    <script type="text/javascript">
+       var a=0,b=0,c=0;
+       c=parseFloat(c);
+      
+       function x()
+       {
+        result_label.innerHTML="计算结果为："   
+        a=document.getElementById("a1").value;
+        a=parseFloat(a);
+        b=document.getElementById("b1").value;
+        b=parseFloat(b);
+        c=a+b;
+        result_label.innerHTML=result_label.innerHTML+parseFloat(c);
+         a1.value="";
+         b1.value="";
+       }
+    </script>   
+  </head>
+  
+  <body>
+    <div id="a" class="div1">
+      第一个数字：<br>
+      <input type="text" id="a1" placeholder="点击输入数字" />
+    </div>  
+    
+    <div id="func" class="div2">
+      <input type="button" name="+" value="+" onclick="x" />
+      <input type="button" name="*" value="*" />
+      <input type="button" name="/" value="/" />
+      <input type="button" name="-" value="-" />
+    </div>   
+   
+    <div id="b" class="div3">
+    第二个数字：<br>
+      <input type="text" id="b1" name="test" placeholder="点击输入数字" />
+    </div>   
+    
+    <div id="result" class="div4">
+      <input type="button" id="result" value="计算结果" onclick="x()" /> 
+    </div> 
+   
+    <div id="result_label" class="div5">
+      计算结果为：
+    </div>
+  </body>
+</html>
