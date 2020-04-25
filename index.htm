@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>计算伤害</title>
+  <script type="text/javascript">
+    function js()
+    {
+     var a=document.getElementById("bfgjl").value;
+     a=parseInt(a);
+     var b=document.getElementById("hjct").value;
+     b=parseInt(b);
+     var c=document.getElementById("dfhj").value;
+     c=parseInt(c);
+     var d,e;
+     d=100+c;
+     e=a*100/d;
+     e=parseInt(e);
+          document.getElementById("div2").innerHTML="实际伤害:"+e; 
+    }
+  </script>
+</head>
+<body>
+  <!-- 具体部分，需要三个输入框，各输入本方攻击力（bfgjl），护甲穿透(hjct),对方护甲（dfhj）,显示实际伤害（sjsh）
+      三个未知数通过计算之后得出结果
+      首先输入数值(text输入框内)如果能做成按键会比较方便触屏使用
+      document。getElementById(id).value获得三个未知数的value
+      创建一个功能。写入公式
+      在创建一个div
+      得出结果value写入div中
+      得出结果后清空所有输入框数字 -->
+
+      <!-- 怎么做成按键输入数值
+      首先创建一个按钮，这个按钮点击的功能是把输入框的value增加一个字符
+      在点击计算结果时把所有的输入框由字符（用parseFloat）转换为数值进行计算
+      还要有一个退格键，点击退格，删除上一个字符 -->
+
+      <!-- 删除字符功能？
+      a=bfgjl.getelementbyid.innerHTML
+      a.substring(0,a.length-1); -->
+  <div>这是一个计算伤害的功能。想要达到输入本方攻击力，护甲穿透，对方护甲  <br/>得出实际伤害 <br/>现在只能尝试实现手动输入功能  </div>
+  <!-- 三个输入框 -->
+  <div>
+    本方攻击力：<input type="text" name="bfgjl" id="bfgjl"><br/>
+    护甲穿透：<input type="text" name="hjct" id="hjct"><br/>
+    对方护甲：<input type="text" name="dfhj" id="dfhj"><br/>
+    <input type="button" value="计算结果" id="sjsh" onclick="js()">
+  </div>
+  <!-- 输入结果 -->
+  <div id="div2">
+    实际伤害：
+  </div>
+<!-- 尝试做按键输入和退格键 -->
+  <br/><br/><br/><br/><br/><div class=btn>
+  功能还未实现 <br/>
+  <input type="button" id="1" value="1">
+  <input type="button" id="2" value="2">
+  <input type="button" id="3" value="3"> <br/>
+  <input type="button" id="4" value="4">
+  <input type="button" id="5" value="5">
+  <input type="button" id="6" value="6"><br/>
+  <input type="button" id="7" value="7">
+  <input type="button" id="8" value="8">
+  <input type="button" id="9" value="9">
+  <input type="button" id="0" value="0"><br/>
+  <input type="button" id="bs" value="退格">
+  <input type="button" id="cal" value="结果">
+
+  </div>
+</body>
+</html>
