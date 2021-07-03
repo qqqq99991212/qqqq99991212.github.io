@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>svg测试</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+		@keyframes moving-rect-path-animation{
+				from 
+				{
+					offset-distance:0%;
+				}
+
+				to
+				{
+					offset-distance:100%;
+				}
+			}
+
+			@keyframes dmoving-rect-path-animation{
+				from 
+				{
+					offset-distance:100%;
+				}
+
+				to
+				{
+					offset-distance:0%;
+				}
+			}
+
+		.moving-rect {
+			position: relative;
+			float: left;
+			clear: both;
+			offset-path:path("M 0,150 C100,150 1800,300 1900,220 ");	
+			offset-distance:0%;	
+
+			animation: moving-rect-path-animation 8s 1 normal none;
+		}
+		.dmoving-rect {
+			position: relative;
+			float: right;
+			clear: both;
+			offset-path:path("M -100,300 C300,550 1800,300 1900,600 ");	
+			offset-distance:100%;	
+
+			animation: dmoving-rect-path-animation 8s 1 normal none;
+		}
+		
+			
+			
+	</style>
+</head>
+<body>
+	<svg version="1.1"
+     	baseProfile="full"
+     	width="1900" height="900"
+     	xmlns="http://www.w3.org/2000/svg">
+  	<rect width="100%" height="60%" fill="#0080FF" />
+  	<rect y="540" width="100%" height="40%" fill="#CD9B1D" />
+ 	 <circle cx="150" cy="100" r="10" fill="#FFE4B5" />
+ 	 <path d="M670,880 C670,880 720,840 770,880" fill="grey" />
+ 	 <rect width="100" height="20" x="670" y="880" fill="red" />
+ 	 <polygon points="710,880 730,880 728,700 712,700"/>
+ 	 <!-- <path d="M0,100 C100,50 1200,150 1440,100 " fill="none" stroke="white" stroke-width="1"></path> -->
+ 	 <path d="M20,150 L120,150 L0,130 L20,150 L0,170 L120,150" width="120" height="40" class="moving-rect" stroke="white" fill="white" stroke-width="2" /> 
+ 	 <path d="M20,150 L120,150 L0,130 L20,150 L0,170 L120,150"  width="120" height="40" class="dmoving-rect" stroke="white" fill="white" stroke-width="2" transform="rotate(180)" /> 
+</svg>
+</body>
+</html>
